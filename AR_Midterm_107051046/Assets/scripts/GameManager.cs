@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("mini")]
-    public Transform mini;
-    [Header("chan")]
-    public Transform chan;
+    [Header("zero1")]
+    public Transform zero1;
+    [Header("zero2")]
+    public Transform zero2;
     [Header("虛擬搖桿")]
     public FixedJoystick joystick;
     [Header("旋轉速度"), Range(0.1f, 20f)]
@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour
         print("更新事件");
         print(joystick.Vertical);
 
-        mini.Rotate(0, -joystick.Horizontal * turn, 0);
-        chan.Rotate(0, -joystick.Horizontal * turn, 0);
-        mini.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
-        chan.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
+        zero1.Rotate(0, -joystick.Horizontal * turn, 0);
+        zero2.Rotate(0, -joystick.Horizontal * turn, 0);
+        zero1.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
+        zero2.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
     }
 
 }

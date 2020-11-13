@@ -13,12 +13,17 @@ public class GameManager : MonoBehaviour
     public float turn = 1.5f;
     [Header("縮放"), Range(0f, 5f)]
     public float size = 0.3f;
-    //[Header("arisa動畫元件")]
+    [Header("zero1動畫元件")]
+    public Animator anizero1;
+    [Header("zero2動畫元件")]
+    public Animator anizero2;
+
 
 
     private void Start()
     {
         print("開始事件執行中");
+       
     }
     private void Update()
     {
@@ -30,5 +35,12 @@ public class GameManager : MonoBehaviour
         zero1.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
         zero2.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
     }
-
+       public void PlayAnimation(string aniName)
+        {
+            print(aniName);
+            anizero1.SetTrigger(aniName);
+            anizero2.SetTrigger(aniName);
+        }
+    
+  
 }

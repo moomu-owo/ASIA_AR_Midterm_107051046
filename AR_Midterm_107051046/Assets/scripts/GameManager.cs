@@ -33,7 +33,9 @@ public class GameManager : MonoBehaviour
         zero1.Rotate(0, -joystick.Horizontal * turn, 0);
         zero2.Rotate(0, -joystick.Horizontal * turn, 0);
         zero1.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
+        zero1.localScale = new Vector3(1, 1, 1) * Mathf.Clamp(zero1.localScale.x, 0.5f, 3.5f);
         zero2.localScale += new Vector3(1, 1, 1) * joystick.Vertical * size;
+        zero2.localScale = new Vector3(1, 1, 1) * Mathf.Clamp(zero2.localScale.x, 0.5f, 3.5f);
     }
        public void PlayAnimation(string aniName)
         {
